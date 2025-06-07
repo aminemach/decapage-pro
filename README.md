@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# DécapagePro - Spécialiste du Nettoyage et Décapage par Laser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un site web professionnel pour une entreprise spécialisée dans le nettoyage et le décapage par laser. Ce projet combine les meilleures caractéristiques des sites dcap-eco59.com/bois et decaper.fr avec un design moderne et professionnel.
 
-## Available Scripts
+## Technologies Utilisées
 
-In the project directory, you can run:
+- React.js
+- TypeScript
+- React Router pour la navigation
+- Material UI pour certains composants
+- Framer Motion pour les animations
+- SASS pour les styles
+- Responsive design pour tous les appareils
 
-### `npm start`
+## Fonctionnalités
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Design moderne et professionnel
+- Navigation fluide et intuitive
+- Galerie avant/après pour montrer les transformations
+- Formulaire de contact pour les demandes de devis
+- Présentation des services de décapage et nettoyage
+- Témoignages clients
+- Optimisé pour les moteurs de recherche
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Cloner le dépôt
+```
+git clone [url-du-repo]
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Installer les dépendances
+```
+cd decapage-pro
+npm install
+```
 
-### `npm run build`
+3. Lancer l'application en mode développement
+```
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Construire l'application pour la production
+```
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Structure du Projet
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `/src/components/layout` - Composants de mise en page (Header, Footer, etc.)
+- `/src/components/home` - Composants de la page d'accueil
+- `/src/components/services` - Composants liés aux services
+- `/src/components/gallery` - Composants de la galerie
+- `/src/components/contact` - Formulaire de contact
+- `/src/styles` - Fichiers de style globaux
+- `/src/assets` - Images et autres ressources statiques
 
-### `npm run eject`
+## Personnalisation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Pour personnaliser le site selon vos besoins :
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Modifiez les couleurs dans `/src/styles/globals.scss`
+2. Remplacez les images placeholder dans `/src/assets/images`
+3. Mettez à jour les textes et descriptions dans les composants respectifs
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Licence
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ce projet est sous licence MIT.

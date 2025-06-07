@@ -1,0 +1,73 @@
+@import '../../styles/globals.scss';
+
+.cta {
+  background-image: linear-gradient(to right, rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.8)), url('https://picsum.photos/id/1055/1920/1080');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--light);
+  padding: var(--spacing-xxl) 0;
+  
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media (max-width: 767px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  &-text {
+    max-width: 600px;
+    
+    h2 {
+      color: var(--light);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+    
+    @media (max-width: 767px) {
+      margin-bottom: var(--spacing-lg);
+    }
+  }
+  
+  &-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+      width: 100%;
+      
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      
+      &-outline-light {
+        background-color: transparent;
+        border: 2px solid var(--light);
+        color: var(--light);
+        
+        &:hover {
+          background-color: var(--light);
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}

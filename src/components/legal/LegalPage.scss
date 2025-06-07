@@ -1,0 +1,121 @@
+@import '../../styles/globals.scss';
+
+.legal-page {
+  .legal-hero {
+    background-image: linear-gradient(to right, rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('https://picsum.photos/id/1065/1920/1080');
+    background-size: cover;
+    background-position: center;
+    color: var(--light);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-md);
+      color: var(--light);
+    }
+    
+    p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+  
+  .legal-content {
+    background-color: var(--gray-100);
+    
+    .container {
+      max-width: 900px;
+    }
+  }
+  
+  .legal-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-md);
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+    
+    .legal-tab {
+      padding: 12px 24px;
+      background-color: var(--gray-200);
+      border: none;
+      border-radius: var(--border-radius-md);
+      font-weight: 500;
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      
+      &:hover {
+        background-color: var(--gray-300);
+      }
+      
+      &.active {
+        background-color: var(--primary-color);
+        color: var(--light);
+      }
+      
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+    }
+  }
+  
+  .legal-tab-content {
+    background-color: var(--light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .last-updated {
+      color: var(--gray-600);
+      font-style: italic;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .legal-section {
+      margin-bottom: var(--spacing-lg);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      h3 {
+        color: var(--gray-900);
+        margin-bottom: var(--spacing-sm);
+        font-size: 1.2rem;
+      }
+      
+      p {
+        color: var(--gray-700);
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.6;
+      }
+      
+      ul {
+        margin-bottom: var(--spacing-sm);
+        padding-left: 20px;
+        
+        li {
+          color: var(--gray-700);
+          margin-bottom: 8px;
+          line-height: 1.6;
+          
+          strong {
+            color: var(--gray-900);
+          }
+        }
+      }
+    }
+  }
+}

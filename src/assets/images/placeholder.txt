@@ -1,0 +1,11 @@
+This directory will contain images for the website.
+
+For a production website, you should replace these placeholders with actual images:
+
+1. hero-bg.jpg - A high-quality image for the hero section background
+2. cta-bg.jpg - A background image for the call-to-action section
+3. service-*.jpg - Images for each service
+4. gallery-*.jpg - Before/after images for the gallery
+5. testimonial-*.jpg - Profile images for testimonials
+
+For now, the website uses placeholder URLs, but for production, you should use local images.

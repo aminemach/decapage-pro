@@ -1,0 +1,46 @@
+@import '../../styles/globals.scss';
+
+.not-found-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-100);
+  padding: var(--spacing-xl) 0;
+  
+  .not-found-content {
+    text-align: center;
+    background-color: var(--light);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    max-width: 500px;
+    width: 100%;
+    
+    h1 {
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-md);
+      line-height: 1;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      color: var(--gray-900);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    p {
+      color: var(--gray-700);
+      margin-bottom: var(--spacing-lg);
+      font-size: 1.1rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+    }
+  }
+}
