@@ -1,68 +1,42 @@
-# DécapagePro - Spécialiste du Nettoyage et Décapage par Laser
+# DécapagePro - Site Web Professionnel
 
-Un site web professionnel pour une entreprise spécialisée dans le nettoyage et le décapage par laser. Ce projet combine les meilleures caractéristiques des sites dcap-eco59.com/bois et decaper.fr avec un design moderne et professionnel.
+Un site web moderne pour une entreprise spécialisée dans le décapage et nettoyage par laser.
 
 ## Technologies Utilisées
 
 - React.js
 - TypeScript
 - React Router pour la navigation
-- Material UI pour certains composants
 - Framer Motion pour les animations
-- SASS pour les styles
-- Responsive design pour tous les appareils
+- SCSS pour le styling
+- React Icons pour l'iconographie
 
-## Fonctionnalités
+## Structure du Site
 
-- Design moderne et professionnel
-- Navigation fluide et intuitive
-- Galerie avant/après pour montrer les transformations
-- Formulaire de contact pour les demandes de devis
-- Présentation des services de décapage et nettoyage
-- Témoignages clients
-- Optimisé pour les moteurs de recherche
+- **Page d'Accueil**: Présentation de l'entreprise avec sections Hero, Services, Galerie, Témoignages et CTA
+- **Services**: Présentation détaillée des services de décapage laser
+- **Galerie**: Exemples de projets avant/après avec filtrage par catégorie et pages détaillées
+- **À Propos**: Histoire de l'entreprise, valeurs et technologie
+- **Contact**: Formulaire de contact et informations
+- **Mentions Légales**: Politique de confidentialité et conditions d'utilisation
 
-## Installation
+## Installation et Démarrage
 
-1. Cloner le dépôt
-```
-git clone [url-du-repo]
-```
-
-2. Installer les dépendances
-```
-cd decapage-pro
+```bash
+# Installation des dépendances
 npm install
-```
 
-3. Lancer l'application en mode développement
-```
+# Lancement du serveur de développement
 npm start
-```
 
-4. Construire l'application pour la production
-```
+# Construction pour la production
 npm run build
 ```
 
-## Structure du Projet
+## Déploiement
 
-- `/src/components/layout` - Composants de mise en page (Header, Footer, etc.)
-- `/src/components/home` - Composants de la page d'accueil
-- `/src/components/services` - Composants liés aux services
-- `/src/components/gallery` - Composants de la galerie
-- `/src/components/contact` - Formulaire de contact
-- `/src/styles` - Fichiers de style globaux
-- `/src/assets` - Images et autres ressources statiques
+Ce site est déployé sur Vercel.
 
-## Personnalisation
+## Auteur
 
-Pour personnaliser le site selon vos besoins :
-
-1. Modifiez les couleurs dans `/src/styles/globals.scss`
-2. Remplacez les images placeholder dans `/src/assets/images`
-3. Mettez à jour les textes et descriptions dans les composants respectifs
-
-## Licence
-
-Ce projet est sous licence MIT.
+Développé par Nidham pour DécapagePro.
