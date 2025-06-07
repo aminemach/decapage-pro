@@ -13,7 +13,8 @@ interface Value {
 const AboutPage: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.01,
+    initialInView: true,
   });
 
   const values: Value[] = [
@@ -46,7 +47,7 @@ const AboutPage: React.FC = () => {
           <h1>À Propos de Nous</h1>
           <p>
             Découvrez notre entreprise spécialisée dans le nettoyage et décapage par laser,
-            au service des particuliers et professionnels dans les Hauts-de-France.
+            au service des particuliers et professionnels dans la région d'Île-de-France.
           </p>
         </div>
       </div>
@@ -56,8 +57,8 @@ const AboutPage: React.FC = () => {
           <div className="about-grid">
             <motion.div
               ref={ref}
-              initial={{ opacity: 0, x: -30 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               className="about-content"
             >
@@ -73,19 +74,19 @@ const AboutPage: React.FC = () => {
                 pour la restauration d'objets personnels que des professionnels pour l'entretien d'équipements industriels.
               </p>
               <p>
-                Basés à Amiens, nous intervenons dans toute la région des Hauts-de-France, apportant notre expertise et notre 
+                Basés à Paris, nous intervenons dans toute la région d'Île-de-France, apportant notre expertise et notre 
                 technologie au service de vos projets de nettoyage et restauration.
               </p>
             </motion.div>
             
             <motion.div
               ref={ref}
-              initial={{ opacity: 0, x: 30 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               className="about-image"
             >
-              <img src="https://via.placeholder.com/600x400?text=Notre+Équipe" alt="Notre équipe" />
+              <img src="https://picsum.photos/id/1059/600/400" alt="Notre équipe" />
             </motion.div>
           </div>
         </div>
@@ -102,8 +103,8 @@ const AboutPage: React.FC = () => {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="value-card"
               >
@@ -121,8 +122,8 @@ const AboutPage: React.FC = () => {
           <div className="about-grid reverse">
             <motion.div
               ref={ref}
-              initial={{ opacity: 0, x: -30 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               className="about-content"
             >
@@ -151,12 +152,12 @@ const AboutPage: React.FC = () => {
             
             <motion.div
               ref={ref}
-              initial={{ opacity: 0, x: 30 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               className="about-image"
             >
-              <img src="https://via.placeholder.com/600x400?text=Technologie+Laser" alt="Notre technologie laser" />
+              <img src="https://picsum.photos/id/1026/600/400" alt="Notre technologie laser" />
             </motion.div>
           </div>
         </div>
