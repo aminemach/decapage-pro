@@ -1,44 +1,92 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FaArrowRight, FaCheck } from 'react-icons/fa';
 import './Hero.scss';
 
 const Hero: React.FC = () => {
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: custom * 0.2, duration: 0.8 }
+    })
+  };
+
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
       <div className="container">
         <div className="hero-content">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            custom={0}
             className="hero-text"
           >
-            <h1>Spécialiste du Nettoyage et du Décapage par Laser</h1>
-            <p>
-              Solutions professionnelles pour particuliers, PME et collectivités dans les Hauts-de-France et environs.
+            <motion.div 
+              className="hero-badge"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span>Expertise Professionnelle</span>
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              Spécialiste du <span className="highlight">Nettoyage</span>
+              <br />
+              et du <span className="highlight">Décapage par Laser</span>
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              Solutions professionnelles pour particuliers, PME et collectivités.
+              <br />
               Redonnez vie à vos métaux, pierres et antiquités avec notre technologie laser de pointe.
-            </p>
-            <div className="hero-buttons">
+            </motion.p>
+            
+            <motion.div 
+              className="hero-features"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+            >
+              <div className="feature-item">
+                <span className="icon">{FaCheck({ size: 16 })}</span> <span>Résultats Précis</span>
+              </div>
+              <div className="feature-item">
+                <span className="icon">{FaCheck({ size: 16 })}</span> <span>Écologique</span>
+              </div>
+              <div className="feature-item">
+                <span className="icon">{FaCheck({ size: 16 })}</span> <span>Sans Produits Chimiques</span>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              className="hero-buttons"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+            >
               <Link to="/contact" className="btn btn-primary">
-                Demander un Devis Gratuit
+                Demander un Devis Gratuit <span className="btn-icon">{FaArrowRight({ size: 16 })}</span>
               </Link>
               <Link to="/services" className="btn btn-outline">
                 Découvrir Nos Services
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
-      </div>
-      <div className="hero-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#ffffff"
-            fillOpacity="1"
-            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
       </div>
     </section>
   );

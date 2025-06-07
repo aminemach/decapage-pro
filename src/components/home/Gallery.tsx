@@ -19,50 +19,49 @@ const Gallery: React.FC = () => {
     threshold: 0.1,
   });
 
-  // This would normally be populated with actual images
-  // For now we'll use placeholders
+  // Gallery items with Lorem Picsum placeholder images
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
       category: 'metaux',
       title: 'Portail en Fer Forgé',
-      beforeImage: 'https://via.placeholder.com/600x400?text=Avant',
-      afterImage: 'https://via.placeholder.com/600x400?text=Après',
+      beforeImage: 'https://picsum.photos/id/96/600/400',
+      afterImage: 'https://picsum.photos/id/26/600/400',
     },
     {
       id: 2,
       category: 'metaux',
-      title: 'Grille Ancienne',
-      beforeImage: 'https://via.placeholder.com/600x400?text=Avant',
-      afterImage: 'https://via.placeholder.com/600x400?text=Après',
+      title: 'Radiateur en Fonte',
+      beforeImage: 'https://picsum.photos/id/155/600/400',
+      afterImage: 'https://picsum.photos/id/175/600/400',
     },
     {
       id: 3,
       category: 'antiquite',
-      title: 'Meuble Vintage',
-      beforeImage: 'https://via.placeholder.com/600x400?text=Avant',
-      afterImage: 'https://via.placeholder.com/600x400?text=Après',
+      title: 'Meuble Ancien',
+      beforeImage: 'https://picsum.photos/id/177/600/400',
+      afterImage: 'https://picsum.photos/id/116/600/400',
     },
     {
       id: 4,
       category: 'pierre',
       title: 'Façade en Pierre',
-      beforeImage: 'https://via.placeholder.com/600x400?text=Avant',
-      afterImage: 'https://via.placeholder.com/600x400?text=Après',
+      beforeImage: 'https://picsum.photos/id/28/600/400',
+      afterImage: 'https://picsum.photos/id/29/600/400',
     },
     {
       id: 5,
-      category: 'cuisine',
-      title: 'Hotte de Restaurant',
-      beforeImage: 'https://via.placeholder.com/600x400?text=Avant',
-      afterImage: 'https://via.placeholder.com/600x400?text=Après',
+      category: 'metaux',
+      title: 'Pièce Métallique',
+      beforeImage: 'https://picsum.photos/id/54/600/400',
+      afterImage: 'https://picsum.photos/id/63/600/400',
     },
     {
       id: 6,
       category: 'pierre',
-      title: 'Statue Ancienne',
-      beforeImage: 'https://via.placeholder.com/600x400?text=Avant',
-      afterImage: 'https://via.placeholder.com/600x400?text=Après',
+      title: 'Statue Historique',
+      beforeImage: 'https://picsum.photos/id/87/600/400',
+      afterImage: 'https://picsum.photos/id/76/600/400',
     },
   ];
 

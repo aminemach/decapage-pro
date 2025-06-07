@@ -56,13 +56,13 @@ const Footer: React.FC = () => {
               <h3>Contactez-nous</h3>
               <div className="contact-info">
                 <p>
-                  {FaPhone({})} <a href="tel:0767271123">07 67 27 11 23</a>
+                  {FaPhone({})} <a href="tel:+21622763146">+216 22 763 146</a>
                 </p>
                 <p>
-                  {FaEnvelope({})} <a href="mailto:contact@decapage-pro.fr">contact@decapage-pro.fr</a>
+                  {FaEnvelope({})} <a href="mailto:sdts2308@outlook.com">sdts2308@outlook.com</a>
                 </p>
                 <p>
-                  {FaMapMarkerAlt({})} <span>Amiens et région Hauts-de-France</span>
+                  {FaMapMarkerAlt({})} <span>Paris et région Île-de-France</span>
                 </p>
               </div>
               <Link to="/contact" className="btn btn-secondary">Demander un Devis</Link>

@@ -81,7 +81,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="info-content">
                   <h3>Téléphone</h3>
-                  <p><a href="tel:0767271123">07 67 27 11 23</a></p>
+                  <p><a href="tel:+21622763146">+216 22 763 146</a></p>
                 </div>
               </div>
               
@@ -91,7 +91,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="info-content">
                   <h3>Email</h3>
-                  <p><a href="mailto:contact@decapage-pro.fr">contact@decapage-pro.fr</a></p>
+                  <p><a href="mailto:sdts2308@outlook.com">sdts2308@outlook.com</a></p>
                 </div>
               </div>
               
@@ -101,21 +101,18 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="info-content">
                   <h3>Adresse</h3>
-                  <p>Amiens et région Hauts-de-France</p>
+                  <p>Ksour Essef, Mahdia 5180</p>
                 </div>
               </div>
             </div>
             
             <div className="service-areas">
               <h3>Zones d'intervention</h3>
-              <p>Nous intervenons principalement dans les départements suivants :</p>
+              <p>Nous intervenons principalement dans les régions suivantes :</p>
               <ul>
-                <li>Somme (80)</li>
-                <li>Oise (60)</li>
-                <li>Aisne (02)</li>
-                <li>Pas-de-Calais (62)</li>
-                <li>Nord (59)</li>
-                <li>Seine Maritime (76)</li>
+                <li>Gouvernorat de Mahdia</li>
+                <li>Délégation de Ksour Essef</li>
+                <li>Et ses environs</li>
               </ul>
             </div>
           </motion.div>
@@ -200,13 +197,13 @@ const ContactForm: React.FC = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
                     required
+                    rows={5}
                   ></textarea>
                 </div>
                 
                 <button type="submit" className="btn btn-primary">
-                  Envoyer la demande
+                  Envoyer ma demande
                 </button>
               </form>
             )}

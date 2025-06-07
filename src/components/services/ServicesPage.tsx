@@ -9,8 +9,7 @@ import {
   FaTools, 
   FaWater, 
   FaHome, 
-  FaBuilding,
-  FaWrench
+  FaBuilding
 } from 'react-icons/fa';
 import './ServicesPage.scss';
 

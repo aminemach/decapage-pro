@@ -25,7 +25,7 @@ const Testimonials: React.FC = () => {
       name: 'Lucien',
       location: 'Amiens',
       text: 'Service impeccable ! Mon portail en fer forgé a retrouvé son éclat d\'antan grâce au décapage laser. Je recommande vivement cette entreprise pour leur professionnalisme et la qualité de leur travail.',
-      image: 'https://via.placeholder.com/100x100',
+      image: 'https://i.pravatar.cc/150?img=65',
       project: 'Nettoyage de portail',
     },
     {
@@ -33,7 +33,7 @@ const Testimonials: React.FC = () => {
       name: 'Pascal',
       location: 'Lille',
       text: 'J\'ai fait appel à leurs services pour restaurer mon café racer vintage. Le résultat est bluffant ! La rouille a complètement disparu sans endommager le métal. Un travail de précision remarquable.',
-      image: 'https://via.placeholder.com/100x100',
+      image: 'https://i.pravatar.cc/150?img=53',
       project: 'Restauration moto',
     },
     {
@@ -41,7 +41,7 @@ const Testimonials: React.FC = () => {
       name: 'M. et Mme S.',
       location: 'Beauvais',
       text: 'Notre façade en pierre était noircie par la pollution. Grâce au nettoyage laser, elle a retrouvé sa couleur d\'origine sans aucun dommage. Équipe sérieuse et efficace, nous sommes très satisfaits.',
-      image: 'https://via.placeholder.com/100x100',
+      image: 'https://i.pravatar.cc/150?img=32',
       project: 'Nettoyage façade',
     },
   ];
