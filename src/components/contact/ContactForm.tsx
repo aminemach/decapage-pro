@@ -172,24 +172,6 @@ const ContactForm: React.FC = () => {
                     />
                   </div>
                 </div>
-                
-                <div className="form-group">
-                  <label htmlFor="service">Service souhaité</label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                  >
-                    <option value="">Sélectionnez un service</option>
-                    <option value="decapage-metaux">Décapage Fer et Métaux</option>
-                    <option value="restauration-antiquite">Restauration d'Antiquité</option>
-                    <option value="nettoyage-pierre">Nettoyage de la Pierre</option>
-                    <option value="nettoyage-cuisine">Nettoyage de Cuisine</option>
-                    <option value="autre">Autre</option>
-                  </select>
-                </div>
-                
                 <div className="form-group">
                   <label htmlFor="message">Message *</label>
                   <textarea

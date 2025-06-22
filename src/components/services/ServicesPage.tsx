@@ -200,14 +200,6 @@ const ServicesPage: React.FC = () => {
                 <div className="service-image">
                   <img src={service.image} alt={service.title} />
                 </div>
-                <div className="service-features">
-                  <h4>Caractéristiques</h4>
-                  <ul>
-                    {service.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
               </motion.div>
             ))}
           </motion.div>
