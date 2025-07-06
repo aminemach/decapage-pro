@@ -13,6 +13,11 @@ import {
 } from 'react-icons/fa';
 import './ServicesPage.scss';
 
+// Import images
+import ferImage from '../../assets/images/gallerie/fer2.jpeg';
+import antiqueImage from '../../assets/images/gallerie/resturation-antique.jpg';
+import pierreImage from '../../assets/images/gallerie/facadepiere.jpeg';
+
 interface Service {
   id: number;
   icon: React.ReactNode;
@@ -42,7 +47,7 @@ const ServicesPage: React.FC = () => {
         'Nettoyage des soudures',
         'Restauration de pièces métalliques anciennes',
       ],
-      image: 'https://via.placeholder.com/600x400?text=Décapage+Métaux',
+      image: ferImage,
     },
     {
       id: 2,
@@ -56,7 +61,7 @@ const ServicesPage: React.FC = () => {
         "Élimination des vernis et peintures",
         "Traitement des meubles et objets de collection",
       ],
-      image: 'https://via.placeholder.com/600x400?text=Restauration+Antiquité',
+      image: antiqueImage,
     },
     {
       id: 3,
@@ -71,82 +76,7 @@ const ServicesPage: React.FC = () => {
         'Préservation des détails et reliefs',
         'Nettoyage des pierres tombales',
       ],
-      image: 'https://via.placeholder.com/600x400?text=Nettoyage+Pierre',
-    },
-    {
-      id: 4,
-      icon: FaUtensils({ size: 32 }),
-      title: 'Nettoyage de Cuisine',
-      description:
-        'Notre technologie laser est capable de brûler toutes les huiles et graisses de cuisson incrustées dans vos hottes, grills et plaques de cuisson professionnelles.',
-      features: [
-        'Élimination des graisses incrustées',
-        'Nettoyage des hottes de cuisine',
-        'Dégraissage des équipements de cuisson',
-        'Nettoyage des fours professionnels',
-        'Traitement hygiénique sans produits chimiques',
-      ],
-      image: 'https://via.placeholder.com/600x400?text=Nettoyage+Cuisine',
-    },
-    {
-      id: 5,
-      icon: FaTools({ size: 32 }),
-      title: 'Préparation des Surfaces',
-      description:
-        'Notre technologie laser permet de préparer efficacement les surfaces avant peinture, vernissage ou tout autre traitement de surface, garantissant une adhérence optimale.',
-      features: [
-        'Préparation avant peinture ou vernissage',
-        'Élimination des revêtements anciens',
-        'Nettoyage des surfaces sans abrasion',
-        'Préparation de surfaces métalliques',
-        'Traitement de précision',
-      ],
-      image: 'https://via.placeholder.com/600x400?text=Préparation+Surfaces',
-    },
-    {
-      id: 6,
-      icon: FaWater({ size: 32 }),
-      title: 'Élimination de la Rouille',
-      description:
-        'Notre laser élimine efficacement la rouille sur tous types de métaux sans endommager le matériau sous-jacent, idéal pour les pièces de valeur ou historiques.',
-      features: [
-        'Élimination totale de la rouille',
-        'Préservation du métal d\'origine',
-        'Traitement de précision',
-        'Idéal pour les pièces mécaniques',
-        'Solution écologique sans produits chimiques',
-      ],
-      image: 'https://via.placeholder.com/600x400?text=Élimination+Rouille',
-    },
-    {
-      id: 7,
-      icon: FaHome({ size: 32 }),
-      title: 'Ravalement de Façades',
-      description:
-        'Notre technologie laser permet de nettoyer et ravaler les façades de bâtiments sans les endommager, éliminant pollution, mousses et lichens de manière écologique.',
-      features: [
-        'Nettoyage de façades en pierre',
-        'Élimination des mousses et lichens',
-        'Traitement respectueux des matériaux',
-        'Solution écologique sans eau ni produits chimiques',
-        'Résultat durable et esthétique',
-      ],
-      image: 'https://via.placeholder.com/600x400?text=Ravalement+Façades',
-    },
-    {
-      id: 8,
-      icon: FaBuilding({ size: 32 }),
-      title: 'Restauration de Monuments',
-      description:
-        'Spécialistes de la restauration de monuments historiques et statues, nous utilisons notre technologie laser pour préserver le patrimoine tout en éliminant les dégradations.',
-      features: [
-        'Restauration de monuments historiques',
-        'Nettoyage de statues et sculptures',
-        'Préservation des détails et reliefs',
-        'Élimination des graffitis',
-        'Approche respectueuse du patrimoine',
-      ],
-      image: 'https://via.placeholder.com/600x400?text=Restauration+Monuments',
+      image: pierreImage,
     },
   ];
 

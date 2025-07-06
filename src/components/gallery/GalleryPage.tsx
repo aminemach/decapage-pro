@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import './GalleryPage.scss';
+
+// Import gallery images
+import portailImage from '../../assets/images/gallerie/publication-portail-av-apr.jpg';
+import antiqueImage from '../../assets/images/gallerie/antique2.jpeg';
+import facadeImage from '../../assets/images/gallerie/.facadepiere2.jpeg';
+import ferImage from '../../assets/images/gallerie/fer1.jpeg';
+import radiateurImage from '../../assets/images/gallerie/Laquage-radiateurs-fontes-(4).jpg';
+import pierreImage from '../../assets/images/gallerie/Nettoyage-avant-apres-dune-allee-en-pierre-exterieure.jpg';
+import fer2Image from '../../assets/images/gallerie/fer3.jpeg';
+import grilleImage from '../../assets/images/gallerie/Peinture_ferronnerie_portail_et_barrieres_v2.jpg';
+import terrasseImage from '../../assets/images/gallerie/renovation-facade-pierre.jpg';
+import meubleImage from '../../assets/images/gallerie/forgé.jpeg';
+import cabineImage from '../../assets/images/gallerie/cabine-de-peinture-radiateurs-06.jpg';
+import restaurationImage from '../../assets/images/gallerie/restauration-facade-pierre-briquette.jpg';
 
 interface GalleryItem {
   id: number;
   category: string;
   title: string;
   description: string;
-  beforeImage: string;
-  afterImage: string;
+  image: string;
   detailedDescription?: string;
   additionalImages?: string[];
   specifications?: { label: string; value: string }[];
@@ -24,80 +37,126 @@ const GalleryPage: React.FC = () => {
   });
 
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+
+  const openLightbox = (item: GalleryItem) => {
+    setSelectedImage(item);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  // Close lightbox on Escape key
+  React.useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    };
+
+    if (selectedImage) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedImage]);
 
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
       category: 'metal',
       title: 'Restauration de Portail en Fer Forgé',
-      description: 'Décapage de rouille et peinture ancienne sur un portail en fer forgé du 19ème siècle.',
-      beforeImage: 'https://picsum.photos/id/102/600/400',
-      afterImage: 'https://picsum.photos/id/103/600/400',
+      description: 'Décapage et restauration complète d\'un portail en fer forgé avec élimination de la rouille et application d\'une nouvelle protection.',
+      image: portailImage,
+      detailedDescription: 'Restauration professionnelle d\'un portail en fer forgé incluant le décapage laser, le traitement antirouille et la finition protectrice.',
+      processDescription: 'Décapage laser → Traitement antirouille → Apprêt → Peinture de finition'
     },
     {
       id: 2,
-      category: 'wood',
-      title: 'Nettoyage de Meuble Ancien',
-      description: 'Élimination des vernis et peintures sur un meuble en chêne du 18ème siècle.',
-      beforeImage: 'https://picsum.photos/id/104/600/400',
-      afterImage: 'https://picsum.photos/id/105/600/400',
+      category: 'antique',
+      title: 'Restauration d\'Antiquités',
+      description: 'Restauration délicate d\'objets anciens et de meubles d\'époque avec préservation de leur authenticité.',
+      image: antiqueImage,
+      detailedDescription: 'Restauration respectueuse du patrimoine avec techniques adaptées à chaque matériau et époque.',
+      processDescription: 'Évaluation → Décapage doux → Traitement conservateur → Finition d\'époque'
     },
     {
       id: 3,
       category: 'stone',
       title: 'Restauration de Façade en Pierre',
-      description: 'Nettoyage de pollution et mousses sur une façade en pierre calcaire.',
-      beforeImage: 'https://picsum.photos/id/106/600/400',
-      afterImage: 'https://picsum.photos/id/107/600/400',
+      description: 'Nettoyage et restauration de façades en pierre naturelle avec élimination des salissures et mousses.',
+      image: facadeImage,
+      detailedDescription: 'Nettoyage laser de façades en pierre permettant de retrouver l\'aspect d\'origine sans endommager le matériau.',
+      processDescription: 'Diagnostic → Nettoyage laser → Traitement hydrofuge → Protection finale'
     },
     {
       id: 4,
       category: 'metal',
       title: 'Décapage de Pièces Mécaniques',
-      description: 'Élimination de rouille sur des pièces mécaniques de collection.',
-      beforeImage: 'https://picsum.photos/id/108/600/400',
-      afterImage: 'https://picsum.photos/id/109/600/400',
+      description: 'Décapage précis de pièces mécaniques et industrielles pour restauration ou maintenance.',
+      image: ferImage,
+      detailedDescription: 'Décapage laser haute précision pour pièces mécaniques sans altération des dimensions.',
+      processDescription: 'Préparation → Décapage laser → Contrôle qualité → Protection anticorrosion'
     },
     {
       id: 5,
-      category: 'wood',
-      title: 'Restauration d\'Escalier en Bois',
-      description: 'Décapage de peinture sur un escalier en bois massif.',
-      beforeImage: 'https://picsum.photos/id/110/600/400',
-      afterImage: 'https://picsum.photos/id/111/600/400',
+      category: 'metal',
+      title: 'Décapage de Radiateur en Fonte',
+      description: 'Élimination de multiples couches de peinture sur radiateurs anciens en fonte pour restauration complète.',
+      image: radiateurImage,
+      detailedDescription: 'Décapage complet de radiateurs en fonte avec préservation des détails décoratifs.',
+      processDescription: 'Démontage → Décapage laser → Réparations → Apprêt → Laquage final'
     },
     {
       id: 6,
       category: 'stone',
-      title: 'Nettoyage de Monument Historique',
-      description: 'Restauration d\'une statue en marbre du 17ème siècle.',
-      beforeImage: 'https://picsum.photos/id/112/600/400',
-      afterImage: 'https://picsum.photos/id/113/600/400',
+      title: 'Nettoyage de Pierre Extérieure',
+      description: 'Nettoyage professionnel de surfaces en pierre extérieures, terrasses et allées.',
+      image: pierreImage,
+      detailedDescription: 'Nettoyage laser de surfaces en pierre extérieures pour éliminer salissures, mousses et lichens.',
+      processDescription: 'Préparation → Nettoyage laser → Rinçage → Traitement protecteur'
     },
     {
       id: 7,
       category: 'metal',
-      title: 'Décapage de Radiateur en Fonte',
-      description: 'Élimination de multiples couches de peinture sur un radiateur ancien.',
-      beforeImage: 'https://picsum.photos/id/114/600/400',
-      afterImage: 'https://picsum.photos/id/115/600/400',
+      title: 'Décapage Fer et Métaux',
+      description: 'Décapage professionnel de tous types de métaux ferreux avec élimination complète de la corrosion.',
+      image: fer2Image,
+      detailedDescription: 'Décapage laser pour métaux ferreux permettant une préparation optimale avant traitement.',
+      processDescription: 'Évaluation → Décapage laser → Décontamination → Traitement anticorrosion'
     },
     {
       id: 8,
-      category: 'wood',
-      title: 'Restauration de Parquet Ancien',
-      description: 'Décapage de vernis sur un parquet en chêne du 19ème siècle.',
-      beforeImage: 'https://picsum.photos/id/116/600/400',
-      afterImage: 'https://picsum.photos/id/117/600/400',
+      category: 'metal',
+      title: 'Restauration de Grilles et Ferronnerie',
+      description: 'Restauration complète de grilles, balcons et éléments de ferronnerie décorative.',
+      image: grilleImage,
+      detailedDescription: 'Restauration de ferronnerie d\'art avec préservation des détails ornementaux.',
+      processDescription: 'Démontage → Décapage → Réparations → Traitement → Finition décorative'
     },
     {
       id: 9,
       category: 'stone',
-      title: 'Nettoyage de Fontaine en Pierre',
-      description: 'Élimination de calcaire et algues sur une fontaine historique.',
-      beforeImage: 'https://picsum.photos/id/118/600/400',
-      afterImage: 'https://picsum.photos/id/119/600/400',
+      title: 'Nettoyage de Terrasse Noircie',
+      description: 'Nettoyage de terrasses en pierre noircies par la pollution et les intempéries.',
+      image: terrasseImage,
+      detailedDescription: 'Nettoyage laser de terrasses en pierre pour retrouver leur couleur d\'origine.',
+      processDescription: 'Préparation → Nettoyage laser → Traitement antitache → Protection durable'
     },
+    {
+      id: 10,
+      category: 'antique',
+      title: 'Restauration de Meubles Anciens',
+      description: 'Décapage et restauration de meubles anciens avec respect des techniques traditionnelles.',
+      image: meubleImage,
+      detailedDescription: 'Restauration de meubles d\'époque avec techniques adaptées à chaque essence de bois.',
+      processDescription: 'Évaluation → Décapage doux → Réparations → Finition traditionnelle'
+    }
   ];
 
   const filteredItems = activeCategory === 'all' 
@@ -106,10 +165,9 @@ const GalleryPage: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'Tous' },
-    { id: 'metal', label: 'Métal' },
-    { id: 'wood', label: 'Bois' },
-    { id: 'stone', label: 'Pierre' },
-    { id: 'kitchen', label: 'Cuisine' },
+    { id: 'metal', label: 'Métal & Ferronnerie' },
+    { id: 'stone', label: 'Pierre & Façades' },
+    { id: 'antique', label: 'Antiquités & Restauration' },
   ];
 
   return (
@@ -156,18 +214,20 @@ const GalleryPage: React.FC = () => {
                 className="gallery-item"
               >
                 <div className="gallery-item-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                  
-                  <div className="before-after-container">
-                    <div className="before-image">
-                      <span className="label">Avant</span>
-                      <img src={item.beforeImage} alt={`${item.title} avant`} />
-                    </div>
-                    <div className="after-image">
-                      <span className="label">Après</span>
-                      <img src={item.afterImage} alt={`${item.title} après`} />
-                    </div>
+                <img src={item.image} alt={item.title} onClick={() => openLightbox(item)} />
+                  <div className="item-info">
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    {item.detailedDescription && (
+                      <div className="detailed-description">
+                        <p><strong>Détails:</strong> {item.detailedDescription}</p>
+                      </div>
+                    )}
+                    {item.processDescription && (
+                      <div className="process-description">
+                        <p><strong>Processus:</strong> {item.processDescription}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -195,6 +255,32 @@ const GalleryPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={closeLightbox}>
+              ×
+            </button>
+            <img src={selectedImage.image} alt={selectedImage.title} />
+            <div className="lightbox-info">
+              <h3>{selectedImage.title}</h3>
+              <p>{selectedImage.description}</p>
+              {selectedImage.detailedDescription && (
+                <div className="detailed-description">
+                  <p><strong>Détails:</strong> {selectedImage.detailedDescription}</p>
+                </div>
+              )}
+              {selectedImage.processDescription && (
+                <div className="process-description">
+                  <p><strong>Processus:</strong> {selectedImage.processDescription}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

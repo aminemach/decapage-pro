@@ -94,76 +94,147 @@
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
+    margin: 0;
+    padding: 0;
+    
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform var(--transition-normal);
+      border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
     
     &:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
+    }
+    
+    .hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity var(--transition-normal);
       
-      .image-overlay {
-        opacity: 1;
+      .view-icon {
+        font-size: 2rem;
+        color: var(--light);
+        opacity: 0.9;
       }
     }
     
-    h3 {
-      font-size: 1.1rem;
-      padding: var(--spacing-md);
-      margin-bottom: 0;
+    .item-content {
+      padding: var(--spacing-sm);
       text-align: center;
+      
+      h3 {
+        font-size: 1.1rem;
+        margin: 0 0 var(--spacing-xs) 0;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+      
+      p {
+        font-size: 0.9rem;
+        margin: 0;
+        color: var(--gray-700);
+        line-height: 1.4;
+      }
     }
   }
 }
 
-.before-after-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background-color: var(--gray-300);
-}
-
-.image-container {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
+// Lightbox Modal Styles
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: var(--spacing-lg);
   
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-normal);
-  }
-  
-  &:hover {
-    img {
-      transform: scale(1.05);
-    }
-  }
-  
-  .image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: var(--spacing-sm);
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    opacity: 0.8;
-    transition: opacity var(--transition-normal);
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
     
-    span {
-      color: var(--light);
-      font-weight: 500;
-      font-size: 0.9rem;
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .lightbox-info {
+      padding: var(--spacing-lg);
+      
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-md);
+        color: var(--primary-color);
+      }
+      
+      p {
+        color: var(--gray-700);
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.6;
+      }
+      
+      .detailed-description,
+      .process-description {
+        margin-top: var(--spacing-md);
+        padding-top: var(--spacing-md);
+        border-top: 1px solid var(--gray-200);
+        
+        p {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
   
-  &.before .image-overlay {
-    span {
-      color: var(--gray-200);
-    }
-  }
-  
-  &.after .image-overlay {
-    span {
-      color: var(--secondary-light);
+  .lightbox-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--light);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: background-color var(--transition-normal);
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.9);
     }
   }
 }
