@@ -27,6 +27,25 @@
   }
   
   .footer-column {
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: var(--spacing-lg);
+      
+      .footer-logo-img {
+        height: 50px;
+        width: auto;
+      }
+      
+      h2 {
+        color: var(--light);
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+    
     h3 {
       color: var(--light);
       font-size: 1.25rem;
@@ -41,7 +60,7 @@
         left: 0;
         width: 50px;
         height: 2px;
-        background-color: var(--secondary-color);
+        background-color: var(--primary-color);
       }
     }
     
@@ -95,8 +114,8 @@
       transition: all var(--transition-normal);
       
       &:hover {
-        background-color: var(--secondary-color);
-        color: var(--dark);
+        background-color: var(--primary-color);
+        color: var(--light);
         transform: translateY(-3px);
       }
     }
@@ -112,7 +131,7 @@
       
       svg {
         margin-right: var(--spacing-sm);
-        color: var(--secondary-color);
+        color: var(--primary-color);
       }
       
       a {

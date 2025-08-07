@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaBars, FaTimes } from 'react-icons/fa';
 import './Header.scss';
 
+// Import logo
+import decaproLogo from '../../assets/images/decapro-logo.png';
+
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -92,8 +95,9 @@ const Header: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
+                className="logo-container"
               >
-                <h1>Décapage<span>Pro</span></h1>
+                <img src={decaproLogo} alt="DécapagePro" className="logo-img" />
               </motion.div>
             </Link>
           </div>

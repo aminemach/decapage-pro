@@ -44,14 +44,7 @@ const Services: React.FC = () => {
         'Les pierres, façades et statues sont attaquées par la pollution. Le laser permet un nettoyage efficace, sans détérioration des matériaux comparé au sablage ou jet haute pression.',
       link: '/services/nettoyage-pierre',
     },
-    {
-      id: 4,
-      icon: FaUtensils({ size: 24 }),
-      title: 'Nettoyage de Cuisine',
-      description:
-        'Notre technologie laser est capable de brûler toutes les huiles et graisses de cuisson incrustées dans vos hottes, grills et plaques de cuisson professionnelles.',
-      link: '/services/nettoyage-cuisine',
-    },
+  
   ];
 
   const containerVariants = {

@@ -14,6 +14,19 @@ import pierreImage from '../../assets/images/gallerie/Nettoyage-avant-apres-dune
 import grilleImage from '../../assets/images/gallerie/Peinture_ferronnerie_portail_et_barrieres_v2.jpg';
 import terrasseImage from '../../assets/images/gallerie/renovation-facade-pierre.jpg';
 
+// Import new category images
+// Article Artisanal
+import art1Image from '../../assets/images/gallerie/article_artisanal/art1.jpg';
+import art2Image from '../../assets/images/gallerie/article_artisanal/art2.jpg';
+
+// Bateaux de Pêche
+import bateau1Image from '../../assets/images/gallerie/bateaux_peche/bateau1.png';
+import bateauDecapageImage from '../../assets/images/gallerie/bateaux_peche/decapage-bateau-sablage-3.jpg';
+
+// Matériels Agricoles
+import material1Image from '../../assets/images/gallerie/materiels_arg/material1.png';
+import material2Image from '../../assets/images/gallerie/materiels_arg/material2.png';
+
 interface GalleryItem {
   id: number;
   category: string;
@@ -115,6 +128,51 @@ const Gallery: React.FC = () => {
       image: terrasseImage,
       description: 'Retrouver la couleur d\'origine de la pierre'
     },
+    // Article Artisanal
+    {
+      id: 9,
+      category: 'artisanal',
+      title: 'Restauration d\'Objets Artisanaux',
+      image: art1Image,
+      description: 'Décapage délicat avec préservation des détails'
+    },
+    {
+      id: 10,
+      category: 'artisanal',
+      title: 'Décapage d\'Œuvres Décoratives',
+      image: art2Image,
+      description: 'Nettoyage précis sans altération des motifs'
+    },
+    // Bateaux de Pêche
+    {
+      id: 11,
+      category: 'bateaux',
+      title: 'Décapage de Coque de Bateau',
+      image: bateau1Image,
+      description: 'Décapage professionnel pour maintenance marine'
+    },
+    {
+      id: 12,
+      category: 'bateaux',
+      title: 'Sablage de Bateau de Pêche',
+      image: bateauDecapageImage,
+      description: 'Remise en état complète de bateaux'
+    },
+    // Matériels Agricoles
+    {
+      id: 13,
+      category: 'agricole',
+      title: 'Décapage de Matériel Agricole',
+      image: material1Image,
+      description: 'Restauration de machines agricoles'
+    },
+    {
+      id: 14,
+      category: 'agricole',
+      title: 'Restauration d\'Équipements Agricoles',
+      image: material2Image,
+      description: 'Remise en état d\'équipements anciens et modernes'
+    },
   ];
 
   const filteredItems = activeTab === 'all' 
@@ -176,6 +234,24 @@ const Gallery: React.FC = () => {
             onClick={() => setActiveTab('pierre')}
           >
             Pierre
+          </button>
+          <button 
+            className={`gallery-tab ${activeTab === 'artisanal' ? 'active' : ''}`}
+            onClick={() => setActiveTab('artisanal')}
+          >
+            Artisanal
+          </button>
+          <button 
+            className={`gallery-tab ${activeTab === 'bateaux' ? 'active' : ''}`}
+            onClick={() => setActiveTab('bateaux')}
+          >
+            Bateaux
+          </button>
+          <button 
+            className={`gallery-tab ${activeTab === 'agricole' ? 'active' : ''}`}
+            onClick={() => setActiveTab('agricole')}
+          >
+            Agricole
           </button>
         </div>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaCheck } from 'react-icons/fa';
 import './Hero.scss';
 
 const Hero: React.FC = () => {
@@ -62,13 +61,13 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.7, duration: 0.8 }}
             >
               <div className="feature-item">
-                <span className="icon">{FaCheck({ size: 16 })}</span> <span>Résultats Précis</span>
+                <span className="icon">✓</span> <span>Résultats Précis</span>
               </div>
               <div className="feature-item">
-                <span className="icon">{FaCheck({ size: 16 })}</span> <span>Écologique</span>
+                <span className="icon">✓</span> <span>Écologique</span>
               </div>
               <div className="feature-item">
-                <span className="icon">{FaCheck({ size: 16 })}</span> <span>Sans Produits Chimiques</span>
+                <span className="icon">✓</span> <span>Sans Produits Chimiques</span>
               </div>
             </motion.div>
             
@@ -79,7 +78,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.9, duration: 0.8 }}
             >
               <Link to="/contact" className="btn btn-primary">
-                Demander un Devis Gratuit <span className="btn-icon">{FaArrowRight({ size: 16 })}</span>
+                Demander un Devis Gratuit <span className="btn-icon">→</span>
               </Link>
               <Link to="/services" className="btn btn-outline">
                 Découvrir Nos Services

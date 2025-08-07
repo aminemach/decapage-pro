@@ -4,6 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import { FaCheck, FaAward, FaRecycle, FaHandshake } from 'react-icons/fa';
 import './AboutPage.scss';
 
+// Import real images from gallery
+import jetlaserImage from '../../assets/images/gallerie/JETLASER_01.jpg';
+import technologiesImage from '../../assets/images/gallerie/technologies.jpg';
+
 interface Value {
   icon: React.ReactNode;
   title: string;
@@ -47,7 +51,7 @@ const AboutPage: React.FC = () => {
           <h1>À Propos de Nous</h1>
           <p>
             Découvrez notre entreprise spécialisée dans le nettoyage et décapage par laser,
-            au service des particuliers et professionnels dans la région d'Île-de-France.
+            au service des particuliers et professionnels dans la région de Mahdia Ksour Essef.
           </p>
         </div>
       </div>
@@ -64,7 +68,7 @@ const AboutPage: React.FC = () => {
             >
               <h2>Notre Histoire</h2>
               <p>
-                Fondée en 2018, notre entreprise est née d'une passion pour la restauration et la préservation des objets et surfaces. 
+                Fondée en 2023, notre entreprise est née d'une passion pour la restauration et la préservation des objets et surfaces. 
                 Face aux méthodes traditionnelles souvent agressives et polluantes, nous avons choisi d'investir dans la technologie 
                 laser de pointe pour offrir des solutions de nettoyage et décapage plus efficaces et respectueuses de l'environnement.
               </p>
@@ -74,7 +78,7 @@ const AboutPage: React.FC = () => {
                 pour la restauration d'objets personnels que des professionnels pour l'entretien d'équipements industriels.
               </p>
               <p>
-                Basés à Paris, nous intervenons dans toute la région d'Île-de-France, apportant notre expertise et notre 
+                Basés à Mahdia Ksour Essef, nous intervenons dans toute la région de Mahdia Ksour Essef, apportant notre expertise et notre 
                 technologie au service de vos projets de nettoyage et restauration.
               </p>
             </motion.div>
@@ -86,7 +90,7 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="about-image"
             >
-              <img src="https://picsum.photos/id/1059/600/400" alt="Notre équipe" />
+              <img src={jetlaserImage} alt="Notre équipement laser professionnel" />
             </motion.div>
           </div>
         </div>
@@ -157,7 +161,7 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="about-image"
             >
-              <img src="https://picsum.photos/id/1026/600/400" alt="Notre technologie laser" />
+              <img src={technologiesImage} alt="Notre technologie laser avancée" />
             </motion.div>
           </div>
         </div>

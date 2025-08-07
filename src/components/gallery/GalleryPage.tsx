@@ -18,6 +18,22 @@ import meubleImage from '../../assets/images/gallerie/forgé.jpeg';
 import cabineImage from '../../assets/images/gallerie/cabine-de-peinture-radiateurs-06.jpg';
 import restaurationImage from '../../assets/images/gallerie/restauration-facade-pierre-briquette.jpg';
 
+// Import new category images
+// Article Artisanal
+import art1Image from '../../assets/images/gallerie/article_artisanal/art1.jpg';
+import art2Image from '../../assets/images/gallerie/article_artisanal/art2.jpg';
+import art3Image from '../../assets/images/gallerie/article_artisanal/art3.jpg';
+
+// Bateaux de Pêche
+import bateau1Image from '../../assets/images/gallerie/bateaux_peche/bateau1.png';
+import bateauDecapageImage from '../../assets/images/gallerie/bateaux_peche/decapage-bateau-sablage-3.jpg';
+import bateauSablageImage from '../../assets/images/gallerie/bateaux_peche/sablage-bateau.jpg';
+
+// Matériels Agricoles
+import material1Image from '../../assets/images/gallerie/materiels_arg/material1.png';
+import material2Image from '../../assets/images/gallerie/materiels_arg/material2.png';
+import material3Image from '../../assets/images/gallerie/materiels_arg/material3.png';
+
 interface GalleryItem {
   id: number;
   category: string;
@@ -156,6 +172,90 @@ const GalleryPage: React.FC = () => {
       image: meubleImage,
       detailedDescription: 'Restauration de meubles d\'époque avec techniques adaptées à chaque essence de bois.',
       processDescription: 'Évaluation → Décapage doux → Réparations → Finition traditionnelle'
+    },
+    // Article Artisanal
+    {
+      id: 11,
+      category: 'artisanal',
+      title: 'Restauration d\'Objets Artisanaux',
+      description: 'Décapage et restauration d\'objets artisanaux et décoratifs avec préservation des détails.',
+      image: art1Image,
+      detailedDescription: 'Restauration délicate d\'objets artisanaux en préservant leur caractère authentique et leurs détails décoratifs.',
+      processDescription: 'Analyse → Décapage sélectif → Restauration → Finition protectrice'
+    },
+    {
+      id: 12,
+      category: 'artisanal',
+      title: 'Décapage d\'Œuvres Décoratives',
+      description: 'Nettoyage et restauration d\'œuvres décoratives et d\'art appliqué.',
+      image: art2Image,
+      detailedDescription: 'Décapage laser précis pour œuvres décoratives sans altération des motifs originaux.',
+      processDescription: 'Évaluation artistique → Décapage contrôlé → Conservation → Protection finale'
+    },
+    {
+      id: 13,
+      category: 'artisanal',
+      title: 'Restauration d\'Artisanat Traditionnel',
+      description: 'Remise en état d\'objets d\'artisanat traditionnel avec respect des techniques ancestrales.',
+      image: art3Image,
+      detailedDescription: 'Restauration respectueuse de l\'artisanat traditionnel en préservant les techniques et matériaux d\'origine.',
+      processDescription: 'Documentation → Décapage traditionnel → Réparations authentiques → Finition d\'époque'
+    },
+    // Bateaux de Pêche
+    {
+      id: 14,
+      category: 'bateaux',
+      title: 'Décapage de Coque de Bateau',
+      description: 'Décapage complet de coques de bateaux de pêche pour maintenance et rénovation.',
+      image: bateau1Image,
+      detailedDescription: 'Décapage professionnel de coques de bateaux pour éliminer peintures marines et corrosion.',
+      processDescription: 'Préparation → Décapage laser → Traitement anticorrosion → Peinture marine'
+    },
+    {
+      id: 15,
+      category: 'bateaux',
+      title: 'Sablage de Bateau de Pêche',
+      description: 'Sablage et décapage de bateaux de pêche pour remise en état complète.',
+      image: bateauDecapageImage,
+      detailedDescription: 'Sablage professionnel de bateaux de pêche incluant coque, superstructures et équipements.',
+      processDescription: 'Démontage → Sablage → Réparations → Traitement → Peinture marine'
+    },
+    {
+      id: 16,
+      category: 'bateaux',
+      title: 'Restauration de Bateau Traditionnel',
+      description: 'Restauration complète de bateaux de pêche traditionnels avec techniques spécialisées.',
+      image: bateauSablageImage,
+      detailedDescription: 'Restauration de bateaux traditionnels en préservant leur authenticité et leur fonctionnalité.',
+      processDescription: 'Évaluation → Décapage → Réparations structurelles → Protection marine'
+    },
+    // Matériels Agricoles
+    {
+      id: 17,
+      category: 'agricole',
+      title: 'Décapage de Matériel Agricole',
+      description: 'Décapage et restauration de machines et outils agricoles pour remise en service.',
+      image: material1Image,
+      detailedDescription: 'Décapage professionnel de matériel agricole pour éliminer rouille et anciennes peintures.',
+      processDescription: 'Démontage → Décapage laser → Réparations → Traitement antirouille → Peinture'
+    },
+    {
+      id: 18,
+      category: 'agricole',
+      title: 'Restauration d\'Équipements Agricoles',
+      description: 'Remise en état complète d\'équipements agricoles anciens et modernes.',
+      image: material2Image,
+      detailedDescription: 'Restauration d\'équipements agricoles incluant décapage, réparations mécaniques et finition.',
+      processDescription: 'Diagnostic → Décapage → Réparations mécaniques → Protection → Remontage'
+    },
+    {
+      id: 19,
+      category: 'agricole',
+      title: 'Rénovation de Machines Agricoles',
+      description: 'Rénovation complète de machines agricoles avec décapage laser et remise aux normes.',
+      image: material3Image,
+      detailedDescription: 'Rénovation de machines agricoles avec techniques modernes pour prolonger leur durée de vie.',
+      processDescription: 'Évaluation → Décapage laser → Modernisation → Contrôle qualité → Finition'
     }
   ];
 
@@ -168,6 +268,9 @@ const GalleryPage: React.FC = () => {
     { id: 'metal', label: 'Métal & Ferronnerie' },
     { id: 'stone', label: 'Pierre & Façades' },
     { id: 'antique', label: 'Antiquités & Restauration' },
+    { id: 'artisanal', label: 'Article Artisanal' },
+    { id: 'bateaux', label: 'Bateaux de Pêche' },
+    { id: 'agricole', label: 'Matériels Agricole' },
   ];
 
   return (

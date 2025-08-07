@@ -28,7 +28,7 @@ const CTA: React.FC = () => {
             </p>
           </div>
           <div className="cta-buttons">
-            <Link to="/contact" className="btn btn-secondary">
+            <Link to="/contact" className="btn btn-primary">
               Demander un Devis {FaArrowRight({ size: 16 })}
             </Link>
             <a href="tel:0767271123" className="btn btn-outline-light">

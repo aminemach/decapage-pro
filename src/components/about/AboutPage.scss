@@ -2,7 +2,7 @@
 
 .about-page {
   .about-hero {
-    background-image: linear-gradient(to right, rgba(26, 60, 110, 0.85), rgba(26, 60, 110, 0.85)), url('https://picsum.photos/id/1025/1920/1080');
+        background-image: linear-gradient(to right, rgb(177 177 177 / 47%), rgb(220 53 69 / 83%));
     background-size: cover;
     background-position: center;
     color: var(--light);
@@ -129,7 +129,7 @@
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        background-color: rgba(26, 60, 110, 0.1);
+        background-color: rgba(220, 53, 69, 0.1);
         color: var(--primary-color);
         display: flex;
         align-items: center;

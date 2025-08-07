@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './Footer.scss';
 
+// Import logo
+import decaproLogo from '../../assets/images/decapro-logo.png';
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
@@ -13,7 +16,8 @@ const Footer: React.FC = () => {
           <div className="footer-content">
             <div className="footer-column">
               <div className="footer-logo">
-                <h2>Décapage<span>Pro</span></h2>
+                <img src={decaproLogo} alt="DécapagePro" className="footer-logo-img" />
+                <h2>DécapagePro</h2>
               </div>
               <p>Spécialiste du nettoyage et du décapage par laser. Nous proposons aux particuliers, PME et collectivités nos services de nettoyage laser de haute qualité.</p>
               <div className="social-links">
@@ -62,7 +66,7 @@ const Footer: React.FC = () => {
                   {FaEnvelope({})} <a href="mailto:sdts2308@outlook.com">sdts2308@outlook.com</a>
                 </p>
                 <p>
-                  {FaMapMarkerAlt({})} <span>Paris et région Île-de-France</span>
+                  {FaMapMarkerAlt({})} <span>Mahdia Ksour Essef</span>
                 </p>
               </div>
               <Link to="/contact" className="btn btn-secondary">Demander un Devis</Link>
