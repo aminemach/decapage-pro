@@ -17,7 +17,6 @@ const Footer: React.FC = () => {
             <div className="footer-column">
               <div className="footer-logo">
                 <img src={decaproLogo} alt="DécapagePro" className="footer-logo-img" />
-                <h2>DécapagePro</h2>
               </div>
               <p>Spécialiste du nettoyage et du décapage par laser. Nous proposons aux particuliers, PME et collectivités nos services de nettoyage laser de haute qualité.</p>
               <div className="social-links">

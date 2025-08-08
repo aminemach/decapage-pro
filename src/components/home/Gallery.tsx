@@ -26,6 +26,7 @@ import bateauDecapageImage from '../../assets/images/gallerie/bateaux_peche/deca
 // Matériels Agricoles
 import material1Image from '../../assets/images/gallerie/materiels_arg/material1.png';
 import material2Image from '../../assets/images/gallerie/materiels_arg/material2.png';
+import material3Image from '../../assets/images/gallerie/materiels_arg/material3.png';
 
 interface GalleryItem {
   id: number;
@@ -33,6 +34,7 @@ interface GalleryItem {
   title: string;
   image: string;
   description?: string;
+  additionalImages?: string[];
 }
 
 const Gallery: React.FC = () => {
@@ -154,7 +156,7 @@ const Gallery: React.FC = () => {
     {
       id: 12,
       category: 'bateaux',
-      title: 'Sablage de Bateau de Pêche',
+      title: 'Bateau de Pêche',
       image: bateauDecapageImage,
       description: 'Remise en état complète de bateaux'
     },
@@ -162,16 +164,10 @@ const Gallery: React.FC = () => {
     {
       id: 13,
       category: 'agricole',
-      title: 'Décapage de Matériel Agricole',
-      image: material1Image,
-      description: 'Restauration de machines agricoles'
-    },
-    {
-      id: 14,
-      category: 'agricole',
       title: 'Restauration d\'Équipements Agricoles',
-      image: material2Image,
-      description: 'Remise en état d\'équipements anciens et modernes'
+      image: material1Image,
+      additionalImages: [material2Image, material3Image],
+      description: 'Remise en état complète d\'équipements agricoles avec décapage laser et restauration professionnelle'
     },
   ];
 
@@ -263,13 +259,48 @@ const Gallery: React.FC = () => {
           className="gallery-grid"
         >
           {filteredItems.map((item) => (
-            <motion.div key={item.id} className="gallery-item" variants={itemVariants}>
-              <img onClick={() => openLightbox(item)} src={item.image} alt={item.title} />
-              
-              <div className="item-content">
-                <h3>{item.title}</h3>
-                {item.description && <p>{item.description}</p>}
-              </div>
+            <motion.div 
+              key={item.id} 
+              className={`gallery-item ${item.category === 'agricole' ? 'gallery-item-fullwidth' : ''}`} 
+              variants={itemVariants}
+            >
+              {item.category === 'agricole' && item.additionalImages ? (
+                // Special full-width layout for agricultural materials
+                <>
+                  <div className="avant-apres-container">
+                    <div className="avant-section">
+                      <h4>Avant</h4>
+                      <img onClick={() => openLightbox(item)} src={item.image} alt={`${item.title} - Avant`} />
+                    </div>
+                    <div className="apres-section">
+                      <h4>Après</h4>
+                      <div className="apres-images">
+                        {item.additionalImages.map((img, index) => (
+                          <img 
+                            key={index} 
+                            onClick={() => openLightbox(item)} 
+                            src={img} 
+                            alt={`${item.title} - Après ${index + 1}`} 
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="item-content">
+                    <h3>{item.title}</h3>
+                    {item.description && <p>{item.description}</p>}
+                  </div>
+                </>
+              ) : (
+                // Standard layout for other items
+                <>
+                  <img onClick={() => openLightbox(item)} src={item.image} alt={item.title} />
+                  <div className="item-content">
+                    <h3>{item.title}</h3>
+                    {item.description && <p>{item.description}</p>}
+                  </div>
+                </>
+              )}
             </motion.div>
           ))}
         </motion.div>

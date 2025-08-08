@@ -76,6 +76,12 @@
       box-shadow: var(--shadow-md);
     }
     
+    // Full-width layout for agricultural materials
+    &.gallery-item-fullwidth {
+      grid-column: 1 / -1; // Span all columns
+      max-width: none;
+    }
+    
     .gallery-item-content {
       img {
         width: 100%;
@@ -146,6 +152,90 @@
           p {
             font-size: 0.9rem;
             margin-bottom: var(--spacing-xs);
+          }
+        }
+      }
+    }
+    
+    // Full-width avant/après layout for agricultural materials
+    .gallery-item-content-fullwidth {
+      .avant-apres-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg);
+        
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          gap: var(--spacing-md);
+        }
+        
+        .avant-section, .apres-section {
+          h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+          
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: transform var(--transition-normal);
+            
+            &:hover {
+              transform: scale(1.02);
+            }
+          }
+        }
+        
+        .apres-section {
+          .apres-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+            
+            @media (max-width: 576px) {
+              grid-template-columns: 1fr;
+            }
+          }
+        }
+      }
+      
+      .item-info {
+        padding: 0 var(--spacing-lg) var(--spacing-lg);
+        
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: var(--spacing-sm);
+          margin-top: 0;
+          color: var(--primary-color);
+          text-align: center;
+        }
+        
+        p {
+          color: var(--gray-700);
+          margin-bottom: var(--spacing-md);
+          line-height: 1.6;
+          text-align: center;
+        }
+        
+        .detailed-description,
+        .process-description {
+          margin-top: var(--spacing-sm);
+          padding-top: var(--spacing-sm);
+          border-top: 1px solid var(--gray-200);
+          
+          p {
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-xs);
+            text-align: left;
           }
         }
       }

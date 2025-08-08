@@ -214,11 +214,11 @@ const GalleryPage: React.FC = () => {
     {
       id: 15,
       category: 'bateaux',
-      title: 'Sablage de Bateau de Pêche',
-      description: 'Sablage et décapage de bateaux de pêche pour remise en état complète.',
+      title: 'Bateau de Pêche',
+      description: 'bateaux de pêche pour remise en état complète.',
       image: bateauDecapageImage,
-      detailedDescription: 'Sablage professionnel de bateaux de pêche incluant coque, superstructures et équipements.',
-      processDescription: 'Démontage → Sablage → Réparations → Traitement → Peinture marine'
+      detailedDescription: 'bateaux de pêche incluant coque, superstructures et équipements.',
+      processDescription: 'Démontage  → Réparations → Traitement → Peinture marine'
     },
     {
       id: 16,
@@ -233,29 +233,12 @@ const GalleryPage: React.FC = () => {
     {
       id: 17,
       category: 'agricole',
-      title: 'Décapage de Matériel Agricole',
-      description: 'Décapage et restauration de machines et outils agricoles pour remise en service.',
-      image: material1Image,
-      detailedDescription: 'Décapage professionnel de matériel agricole pour éliminer rouille et anciennes peintures.',
-      processDescription: 'Démontage → Décapage laser → Réparations → Traitement antirouille → Peinture'
-    },
-    {
-      id: 18,
-      category: 'agricole',
       title: 'Restauration d\'Équipements Agricoles',
-      description: 'Remise en état complète d\'équipements agricoles anciens et modernes.',
-      image: material2Image,
-      detailedDescription: 'Restauration d\'équipements agricoles incluant décapage, réparations mécaniques et finition.',
-      processDescription: 'Diagnostic → Décapage → Réparations mécaniques → Protection → Remontage'
-    },
-    {
-      id: 19,
-      category: 'agricole',
-      title: 'Rénovation de Machines Agricoles',
-      description: 'Rénovation complète de machines agricoles avec décapage laser et remise aux normes.',
-      image: material3Image,
-      detailedDescription: 'Rénovation de machines agricoles avec techniques modernes pour prolonger leur durée de vie.',
-      processDescription: 'Évaluation → Décapage laser → Modernisation → Contrôle qualité → Finition'
+      description: 'Remise en état complète d\'équipements agricoles anciens et modernes avec décapage laser et restauration professionnelle.',
+      image: material1Image,
+      additionalImages: [material2Image, material3Image],
+      detailedDescription: 'Restauration complète d\'équipements agricoles incluant décapage laser, réparations mécaniques et finition. Transformation avant/après visible sur nos réalisations.',
+      processDescription: 'Diagnostic → Décapage laser → Réparations mécaniques → Protection → Remontage → Finition'
     }
   ];
 
@@ -314,25 +297,65 @@ const GalleryPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5 }}
-                className="gallery-item"
+                className={`gallery-item ${item.category === 'agricole' ? 'gallery-item-fullwidth' : ''}`}
               >
-                <div className="gallery-item-content">
-                <img src={item.image} alt={item.title} onClick={() => openLightbox(item)} />
-                  <div className="item-info">
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                    {item.detailedDescription && (
-                      <div className="detailed-description">
-                        <p><strong>Détails:</strong> {item.detailedDescription}</p>
+                {item.category === 'agricole' && item.additionalImages ? (
+                  // Special full-width layout for agricultural materials
+                  <div className="gallery-item-content-fullwidth">
+                    <div className="avant-apres-container">
+                      <div className="avant-section">
+                        <h4>Avant</h4>
+                        <img src={item.image} alt={`${item.title} - Avant`} onClick={() => openLightbox(item)} />
                       </div>
-                    )}
-                    {item.processDescription && (
-                      <div className="process-description">
-                        <p><strong>Processus:</strong> {item.processDescription}</p>
+                      <div className="apres-section">
+                        <h4>Après</h4>
+                        <div className="apres-images">
+                          {item.additionalImages.map((img, index) => (
+                            <img 
+                              key={index} 
+                              src={img} 
+                              alt={`${item.title} - Après ${index + 1}`} 
+                              onClick={() => openLightbox(item)} 
+                            />
+                          ))}
+                        </div>
                       </div>
-                    )}
+                    </div>
+                    <div className="item-info">
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      {item.detailedDescription && (
+                        <div className="detailed-description">
+                          <p><strong>Détails:</strong> {item.detailedDescription}</p>
+                        </div>
+                      )}
+                      {item.processDescription && (
+                        <div className="process-description">
+                          <p><strong>Processus:</strong> {item.processDescription}</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  // Standard layout for other items
+                  <div className="gallery-item-content">
+                    <img src={item.image} alt={item.title} onClick={() => openLightbox(item)} />
+                    <div className="item-info">
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      {item.detailedDescription && (
+                        <div className="detailed-description">
+                          <p><strong>Détails:</strong> {item.detailedDescription}</p>
+                        </div>
+                      )}
+                      {item.processDescription && (
+                        <div className="process-description">
+                          <p><strong>Processus:</strong> {item.processDescription}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </motion.div>
             ))}
           </motion.div>

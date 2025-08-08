@@ -78,8 +78,7 @@ const AboutPage: React.FC = () => {
                 pour la restauration d'objets personnels que des professionnels pour l'entretien d'équipements industriels.
               </p>
               <p>
-                Basés à Mahdia Ksour Essef, nous intervenons dans toute la région de Mahdia Ksour Essef, apportant notre expertise et notre 
-                technologie au service de vos projets de nettoyage et restauration.
+              Basés à Ksour Essef Mahdia, nous sommes présents dans toute la région de Mahdia et toute la Tunisie, mettant notre savoir-faire et notre expertise au service de vos projets de nettoyage et de restauration.
               </p>
             </motion.div>
             

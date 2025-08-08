@@ -165,7 +165,7 @@ const Testimonials: React.FC = () => {
                           ) : (
                             <div className="partner-logo-placeholder">
                               <div className="partner-initials">
-                                {partner.name.split(' ').map(word => word[0]).join('').substring(0, 3)}
+                                DDR
                               </div>
                             </div>
                           )}
