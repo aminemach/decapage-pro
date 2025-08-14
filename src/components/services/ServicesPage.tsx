@@ -15,7 +15,7 @@ import './ServicesPage.scss';
 
 // Import images
 import ferImage from '../../assets/images/gallerie/fer2.jpeg';
-import antiqueImage from '../../assets/images/gallerie/resturation-antique.jpg';
+import antiqueImage from '../../assets/images/gallerie/restauration-de-statue-en-bronze.jpg';
 import pierreImage from '../../assets/images/gallerie/facadepiere.jpeg';
 
 interface Service {

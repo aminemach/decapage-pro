@@ -14,7 +14,7 @@ import pierreImage from '../../assets/images/gallerie/Nettoyage-avant-apres-dune
 import fer2Image from '../../assets/images/gallerie/fer3.jpeg';
 import grilleImage from '../../assets/images/gallerie/Peinture_ferronnerie_portail_et_barrieres_v2.jpg';
 import terrasseImage from '../../assets/images/gallerie/renovation-facade-pierre.jpg';
-import meubleImage from '../../assets/images/gallerie/forgé.jpeg';
+import meubleImage from '../../assets/images/gallerie/relooking-buffet-table-chaise-bois-meuble.jpg';
 import cabineImage from '../../assets/images/gallerie/cabine-de-peinture-radiateurs-06.jpg';
 import restaurationImage from '../../assets/images/gallerie/restauration-facade-pierre-briquette.jpg';
 
